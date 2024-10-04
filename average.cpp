@@ -4,7 +4,7 @@ int main() {
  int num1, num2, num3, num4, num5, sum, average;
  cout << " Enter your first number: ";
  cin >> num1;
- cout << " Enter your secomd number: ";
+ cout << " Enter your second number: ";
  cin >> num2;
   cout << " Enter your third number: ";
  cin >> num3;
