@@ -19,7 +19,6 @@
 // }
 // this will print A then B A then C B A
 
-
 // #include<iostream>
 // using namespace std;
 // int main (){
@@ -40,18 +39,15 @@
 //     }
 //      cout << endl;
 //   }
- 
+
 //   return 0;
-// } 
+// }
 
-
-// Upper code of 
+// Upper code of
 // 1111
 //  222
 //   33
 //    4
-
-
 
 // #include<iostream>
 // using namespace std;
@@ -59,7 +55,7 @@
 //     int n;
 //   n=8;
 //   for (int i =0; i<n; i++)
-//   { 
+//   {
 //     //spcaes
 //     for ( int j=0; j<n-i-1; j++)
 //     {
@@ -77,47 +73,49 @@
 //       cout <<j;
 //     }
 //     cout << endl;
-  
-// } 
+
+// }
 // return 0;
 // }
 
-
 // upper code is like
-//         1 
+//         1
 //       1 2 1
 //     1 2 3 2 1
 //   1 2 3 4 3 2 1
 
-
-#include<iostream>
+#include <iostream>
 using namespace std;
-int main (){
-  
-  int  n =4;
-  for (int i =0; i<n; i++ )
-{ 
-  //spaces
-  for ( int j =0; j<n-i-1; j++)
-  {
-    cout << " ";
-  }
+int main()
+{
 
-  cout << "*";
-// next spaces inner space 
-  if (i!=0)
+  int n = 4;
+  for (int i = 0; i < n; i++)
   {
-    for ( int j =0; j<2*i-1; j++)
+    // spaces
+    for (int j = 0; j < n - i - 1; j++)
     {
       cout << " ";
     }
 
     cout << "*";
+    // next spaces inner space
+    if (i != 0)
+    {
+      for (int j = 0; j < 2 * i - 1; j++)
+      {
+        cout << " ";
+      }
+
+      cout << "*";
+    }
+    cout << endl;
   }
-  cout << endl;
-}
 
   // Bottom part
-  for ( int i =n; i>0; i--)
+  for (int i = n; i > 0; i--)
+  {
+    for (int j)
+  }
   return 0;
 }
