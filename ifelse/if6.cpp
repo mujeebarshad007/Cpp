@@ -6,7 +6,7 @@ int main (){
     cin >> angle1;
     cout << " Input Second Angle : ";
     cin >> angle2;
-     cout << " Input Third Angle : ";
+    cout << " Input Third Angle : ";
     cin >> angle3;
 sum = angle1 + angle2 + angle3;
 if ( sum == 180){
