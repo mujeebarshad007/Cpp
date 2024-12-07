@@ -14,6 +14,8 @@ int main()
         cin >> arr[i];
     }
 
+    // code for dsiplaying Unsorted Data
+
     cout << " The Data Before Sorting is .\n";
 
     for (i = 0; i < size; i++)
@@ -21,6 +23,8 @@ int main()
         cout << arr[i] << "\t";
     }
     cout << endl;
+
+    // Code of sorting Data
 
     for (i = 0; i < size - 1; i++)
     {
@@ -39,6 +43,9 @@ int main()
         arr[loc] = temp;
     }
     cout << endl;
+
+    // code for dsiplaying sorted Data
+
     cout << " The data After Sorting is . \n";
     for (i = 0; i < size; i++)
     {
