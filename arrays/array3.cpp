@@ -21,14 +21,14 @@ int main()
     {
         if (num[i] < smallest)
         {
-            smallest = num[i];
+            smallest = i;
         }
         if (num[i] > largest)
         {
             largest = num[i];
         }
     }
-    cout << " The Smallest In this array is = " << smallest << endl;
-    cout << " The Largest In this array is = " << largest << endl;
+    cout << " The Smallest In this array is at = " << i << endl;
+    cout << " The Largest In this array is at= " << largest << endl;
     return 0;
 }

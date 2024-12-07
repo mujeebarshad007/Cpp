@@ -1,3 +1,4 @@
+// Linear searching in an array
 #include <iostream>
 using namespace std;
 int main()
@@ -7,7 +8,7 @@ int main()
     bool found = false;
     int count = 0;
     int num, j;
-    cout << " Enter The NUmber YOu Want to search = " << endl;
+    cout << " Enter The Number YOu Want to search = " << endl;
     cin >> num;
 
     while (count < size && (!found))
