@@ -1,3 +1,4 @@
+// Program of output of single array having Multiple arrays rows sum
 #include <iostream>
 using namespace std;
 int main()

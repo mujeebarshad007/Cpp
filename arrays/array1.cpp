@@ -8,7 +8,7 @@ int main()
     bool found = false;
     int count = 0;
     int num, j;
-    cout << " Enter The Number YOu Want to search = " << endl;
+    cout << " Enter The Number You Want to search = " << endl;
     cin >> num;
 
     while (count < size && (!found))
