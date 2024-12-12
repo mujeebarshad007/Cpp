@@ -52,7 +52,7 @@ int main()
     for (i = 0; i < std; i++)
 
     {
-        int sum = 0;
+        float sum = 0;
         for (j = 0; j < sub; j++)
         {
             sum += marks[i][j];
@@ -66,7 +66,7 @@ int main()
     cout << "==========================" << endl;
     for (i = 0; i < std; i++)
     {
-        cout << "Student " << i + 1 << "\t" << avg[i] << endl;
+        cout << "Student " << i + 1 << "\t" << (avg[i]) << endl;
     }
     //    Displaying highest
 

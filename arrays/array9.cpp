@@ -46,7 +46,8 @@ int main()
             }
         }
     }
-    cout << endl;
+
+        cout << endl;
     cout << " The sum of the Uper Triangle is Element is = " << sum2 << endl;
     cout << " The sum of the Lower Triangle is Element is = " << sum << endl;
 

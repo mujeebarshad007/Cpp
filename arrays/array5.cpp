@@ -1,3 +1,4 @@
+// Binary Searching in an array
 #include <iostream>
 using namespace std;
 const int size = 5;
@@ -25,7 +26,6 @@ int main()
     found = false;
     while ((low <= high) && !(found))
     {
-        // mid = low + (high - low) / 2;
         mid = (low + high) / 2;
         if (list[mid] == num)
         {
@@ -42,7 +42,7 @@ int main()
         {
             high = mid - 1;
         }
-    } // end while
+    }
 
     if (found == true)
         cout << "Number is found at index " << ind;
@@ -50,4 +50,4 @@ int main()
         cout << "Number Not found";
 
     return 0;
-} // end main
+}
