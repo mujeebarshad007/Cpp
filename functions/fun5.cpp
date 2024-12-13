@@ -1,16 +1,21 @@
 #include <iostream>
 using namespace std;
+int sumD(int);
+int sumD(int n1)
+{
+    int sum = 0;
+    while (n1 != 0)
+    {
+        sum += n1 % 10;
+        n1 /= 10;
+    }
+    return sum;
+}
 int main()
 {
     int num1;
-    int sum = 0;
     cout << " Enter The Number = ";
     cin >> num1;
-    while (num1 != 0)
-    {
-        sum += num1 % 10;
-        num1 /= 10;
-    }
-    cout << sum;
+    cout << " The Sum of Its Digits is : " << sumD(num1) << endl;
     return 0;
 }
