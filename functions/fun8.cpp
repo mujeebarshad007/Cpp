@@ -4,17 +4,18 @@ void primeC(int);
 void primeC(int n)
 {
 
-    bool found = false;
+    bool isPrime = false;
 
     for (int i = 2; i <= n - 1; i++)
     {
         if (n % i == 0)
         {
-            found = true;
+            isPrime = true;
+
             break;
         }
     }
-    if (found == true)
+    if (isPrime == true)
     {
         cout << " The Number you Entered is not a Prime Number\n";
     }
