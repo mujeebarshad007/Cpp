@@ -23,7 +23,7 @@ float Ar(int n2)
 int main()
 {
     int num;
-    cout << " Enter The Number You Want to Find Diameter, Circumference and Area = ";
+    cout << " Enter The Number You Want to Find Diametr, Circumference and Area = ";
     cin >> num;
     cout << " The Diameter is = " << Diam(num) << endl;
     cout << " The Circumference is = " << Circum(num) << endl;
