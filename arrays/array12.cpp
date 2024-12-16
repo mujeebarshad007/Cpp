@@ -48,16 +48,16 @@ int main()
     }
 
     // Calculating Average of Students
-
+    float sumT[std];
     for (i = 0; i < std; i++)
 
     {
-        float sum = 0;
+        sumT[i] = 0;
         for (j = 0; j < sub; j++)
         {
-            sum += marks[i][j];
+            sumT[i] += marks[i][j];
         }
-        avg[i] = sum / j;
+        avg[i] = sumT[i] / j;
     }
 
     // Displaying Average of student
@@ -99,19 +99,17 @@ int main()
 
     // Displaying who have highest marks in all subjects
     int highest = INT_MIN;
-    for (j = 0; j < sub; j++)
+    for (i = 0; i < std; i++)
     {
-        for (i = 0; i < std; i++)
+
+        if (sumT[i] > highest)
         {
-            if (marks[i][j] > highest)
-            {
-                highest = marks[i][j];
-                k = i;
-                l = j;
-            }
+            highest = sumT[i];
+            k = i;
+            l = j;
         }
     }
-    cout << "The Highest Marks is of the student " << k + 1 << " and is in Subject " << l + 1 << " and is " << highest << endl;
+    cout << "The Highest Marks is of the student " << k + 1 << " in all subjects" << endl;
     cout << "\n";
 
     // Displaying who have lowest marks in Subject 4
