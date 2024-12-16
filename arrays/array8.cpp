@@ -35,7 +35,7 @@ int main()
     {
         for (int j = 0; j < col; j++)
         {
-            if (arr[i] == arr[j])
+            if (i == j)
             {
                 sum += arr[i][j];
             }

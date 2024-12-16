@@ -1,12 +1,23 @@
 #include <iostream>
 using namespace std;
-totamt(float, float, float, float);
-totamt(float quarters = 1, float dimes = 1, float nickels = 1, float pennies = 1)
+float totamt(float, float, float, float);
+float totamt(float quarters, float dimes, float nickels, float pennies)
 {
-
-    quarters =
+    float total;
+    total = quarters * 0.25 + (dimes * 0.10) + (nickels * 0.05) + (pennies * 0.01);
+    return total;
 }
 int main()
 {
-    int return 0;
+    int n1, n2, n3, n4;
+    cout << " Enter the value of the quarters : ";
+    cin >> n1;
+    cout << " Enter the value of the dimes : ";
+    cin >> n2;
+    cout << " Enter the value of the nickels : ";
+    cin >> n3;
+    cout << " Enter the value of the pennies : ";
+    cin >> n4;
+
+    cout << " The Total value is : " << totamt(n1, n2, n3, n4) << endl;
 }

@@ -22,7 +22,7 @@ int main()
     }
     if (found == true)
     {
-        cout << " The Number Your searched is Found and is at index " << list[count] << endl;
+        cout << " The Number Your searched is Found and is at index " << count - 1 << endl;
     }
     else
     {
