@@ -63,10 +63,10 @@ int main()
     // Displaying Average of student
 
     cout << "\nStudent\t\tAverage" << endl;
-    cout << "==========================" << endl;
+    cout << "=======================" << endl;
     for (i = 0; i < std; i++)
     {
-        cout << "Student " << i + 1 << "\t" << (avg[i]) << endl;
+        cout << " " << i + 1 << "\t\t" << (avg[i]) << endl;
     }
     //    Displaying highest
 
@@ -109,7 +109,7 @@ int main()
             l = j;
         }
     }
-    cout << "The Highest Marks is of the student " << k + 1 << " in all subjects" << endl;
+    cout << "The Highest Marks is of the student " << k + 1 << " in all subjects" << " and are " << highest << endl;
     cout << "\n";
 
     // Displaying who have lowest marks in Subject 4
@@ -155,6 +155,6 @@ int main()
             k++;
         }
     }
-    cout << "The students who got grade A in Subject 4 are " << k << endl;
+    cout << "The Students who got grade A in Subject 4 are " << k << endl;
     return 0;
 }
