@@ -1,3 +1,4 @@
+// FInding maximum and minimum in array using functions
 #include <iostream>
 #include <climits>
 
