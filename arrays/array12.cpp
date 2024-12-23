@@ -1,10 +1,10 @@
-// Assignment Project
+// Assignment Project 4
 #include <iostream>
 #include <climits>
 using namespace std;
 int main()
 {
-    const int std = 3;
+    const int std = 40;
     const int sub = 5;
 
     float marks[std][sub];
@@ -68,7 +68,7 @@ int main()
     {
         cout << " " << i + 1 << "\t\t" << (avg[i]) << endl;
     }
-    //    Displaying highest
+    //    Displaying highest Average
 
     cout << endl;
     for (i = 0; i < std; i++)
