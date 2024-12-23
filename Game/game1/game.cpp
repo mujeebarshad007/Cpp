@@ -57,7 +57,7 @@ void EnterValue(char arr1[3][3])
 
     while (moves < 9)
     {
-        cout << "Player " << currentPlayer << ", Kindly Enter your input (1-9): ";
+        cout << "Player " << currentPlayer << ", Kindly Enter your input Please (1-9): ";
         cin >> num;
         if (num < 1 || num > 9)
         {
