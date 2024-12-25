@@ -2,9 +2,9 @@
 
 #include <iostream>
 using namespace std;
-void Displayboard(char arr[3][3])
+void Displayboard(char arr[3][3]) /*Function for displaying the baord*/
 {
-    string indent = "\t\t\t\t\t\t\t\t\t";
+    string indent = "\t\t\t\t\t\t\t\t\t"; /*used STL Library string*/
 
     cout << "\n"
          << indent << " -------------" << endl;
@@ -20,36 +20,36 @@ void Displayboard(char arr[3][3])
     }
 }
 
-bool checkWinner(char arr2[3][3], char currentPlayer)
+bool checkWinner(char arr2[3][3], char currentPlayer) /* Simple Function for checking winner*/
 {
 
     for (int i = 0; i < 3; i++)
     {
-        if (arr2[i][0] == currentPlayer && arr2[i][1] == currentPlayer && arr2[i][2] == currentPlayer)
+        if (arr2[i][0] == currentPlayer && arr2[i][1] == currentPlayer && arr2[i][2] == currentPlayer) // Checking for the columns
         {
             cout << " The player " << currentPlayer << " Won the game \n";
             return true;
         }
-        if (arr2[0][i] == currentPlayer && arr2[1][i] == currentPlayer && arr2[2][i] == currentPlayer)
+        if (arr2[0][i] == currentPlayer && arr2[1][i] == currentPlayer && arr2[2][i] == currentPlayer) // Checkinng for the Rows
         {
             cout << " The player " << currentPlayer << " Won the game \n";
             return true;
         }
     }
 
-    if (arr2[0][0] == currentPlayer && arr2[1][1] == currentPlayer && arr2[2][2] == currentPlayer)
+    if (arr2[0][0] == currentPlayer && arr2[1][1] == currentPlayer && arr2[2][2] == currentPlayer) // checking for the Primary Diagonals
     {
         cout << " The Player " << currentPlayer << " Won the game \n";
         return true;
     }
-    if (arr2[0][2] == currentPlayer && arr2[1][1] == currentPlayer && arr2[2][0] == currentPlayer)
+    if (arr2[0][2] == currentPlayer && arr2[1][1] == currentPlayer && arr2[2][0] == currentPlayer) // Checking for the Secondary Diagonals
     {
-        cout << " The Player " << currentPlayer << " Won the game \n";
+        cout << " COngratulations The Player " << currentPlayer << " Won the game \n";
         return true;
     }
     return false;
 }
-void EnterValue(char arr1[3][3])
+void EnterValue(char arr1[3][3]) /*Funnction for entering values*/
 {
     int moves = 0;
     char currentPlayer = 'X';
@@ -95,7 +95,6 @@ int main()
     cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
     cout << "\t\t\t\t\t\t\t |             Welcome  Guys How are You!            |" << endl;
     cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
-    cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
     cout << "\t\t\t\t\t\t\t |           This is NIKO's Tic Tac Toe Game         |" << endl;
     cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
     cout << "\t\t\t\t\t\t\t |             Please Press  /S/ to Start            |" << endl;
@@ -112,7 +111,7 @@ int main()
     }
     else
     {
-        cout << " You didn't Press S, So Game would not start\n";
+        cout << " You didn't Press S, So Game will not start\n";
     }
 
     return 0;

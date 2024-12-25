@@ -1,4 +1,4 @@
-// Program of sum and product of  elements of the array usinf functions
+// Program of sum and product of  elements of the array using functions
 #include <iostream>
 using namespace std;
 int Sum(int arr[], int size)
