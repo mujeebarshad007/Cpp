@@ -1,3 +1,4 @@
+// linear searching using functions
 #include <iostream>
 using namespace std;
 void linS(int arr[], int sz, int targt)
@@ -33,7 +34,15 @@ int main()
         12,
         54,
     };
+
+    cout << " array is givven as \n";
+
     int size = 6;
+    for (int i = 0; i < size; i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
     cout << " Enter The value of the target you want to search : ";
     cin >> target;
     linS(arr, size, target);
