@@ -1,40 +1,26 @@
+// Comparing two strings of type char
 #include <iostream>
 using namespace std;
 int main()
 {
-
-      int list[4][4] = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
-      int multiplier;
-      for (int i = 0; i < 4; i++)
-      {
-            for (innt j = 0; j < 4; j++)
-            {
-                  cout << list[i][j] << " ";
-            }
-            cout << endl;
-      }
-
-      cout << " Enter the multiplier : ";
-      cin >> multiplier;
-
-      for (int i = 0; i < 4; i++)
-      {
-            for (innt j = 0; j < 4; j++)
-            {
-                  list[i][j] = multiplier * list[i][j];
-            }
-      }
-
-      cout << endl;
-      cout << " The Updated matrice is givven as : ";
-      cout << endl;
-      for (int i = 0; i < 4; i++)
-      {
-            for (innt j = 0; j < 4; j++)
-            {
-                  cout << list[i][j] << " ";
-            }
-            cout << endl;
-      }
-      return 0;
+    bool found = true;
+    char str1[20] = "Mujeeb";
+    char str2[20] = "Mujeeb";
+    for (int i = 0; str1[i] != '\0'; i++)
+    {
+        if (str1[i] != str2[i])
+        {
+            found = false;
+            break;
+        }
+    }
+    if (found)
+    {
+        cout << "  yes these two strings are equal to each other\n";
+    }
+    if (found == false)
+    {
+        cout << " not equal to each other :\n";
+    }
+    return 0;
 }
