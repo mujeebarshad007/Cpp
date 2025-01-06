@@ -32,6 +32,8 @@ int main()
         cout << endl;
     }
 
+    //  Logic
+
     for (int i = 0; i < row; i++)
     {
         for (int j = 0; j < col; j++)
@@ -47,8 +49,8 @@ int main()
         }
     }
 
-        cout << endl;
-    cout << " The sum of the Uper Triangle is Element is = " << sum2 << endl;
+    cout << endl;
+    cout << " The sum of the Upper Triangle is Element is = " << sum2 << endl;
     cout << " The sum of the Lower Triangle is Element is = " << sum << endl;
 
     return 0;

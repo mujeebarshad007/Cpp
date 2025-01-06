@@ -1,4 +1,4 @@
-//  Gary J. Bronson Chapter  7.3 Question 7
+//  Gary J. Bronson Chapter  7.3 Question 8
 #include <iostream>
 using namespace std;
 float calavg(float array[], int sz)
@@ -17,7 +17,7 @@ float calcvariance(float array1[], int siz, float avg)
     float sum_sq_diff = 0;
     for (int i = 0; i < siz; i++)
     {
-        sum_sq_diff += (array1[i] - avg) * (array1[i] - avg);
+        sum_sq_diff += (array1[i] - avg) * (array1[i] - avg); /*Formula for finding variance*/
     }
     return sum_sq_diff / siz;
 }
