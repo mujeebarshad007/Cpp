@@ -26,5 +26,6 @@ int main()
       }
       cout << " The Vowel are " << vow << endl;
       cout << " The Consonant are " << cons << endl;
+
       return 0;
 }
