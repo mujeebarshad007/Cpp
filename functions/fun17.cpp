@@ -14,7 +14,7 @@ int main()
 {
     int num1;
     int Rev1;
-    cout << " Enter the number you want to reverse \n";
+    cout << " Enter the number you want to Check Palindrome \n";
     cin >> num1;
     int original = num1;
     Reverse(num1, Rev1);

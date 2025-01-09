@@ -21,6 +21,7 @@ int main()
     cout << " Enter The String\n";
     cin.getline(str, 100);
     rev(str);
+    system("color 7c");
     cout << " The reverse of the string is " << str << endl;
     return 0;
 }

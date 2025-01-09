@@ -1,6 +1,6 @@
-Using pass by reference calculating time
+// Using pass by reference calculating time
 #include <iostream>
-    using namespace std;
+using namespace std;
 void time(float, float &, float &, float &);
 void time(float seconds, float &minutes, float &hours, float &seconds2)
 {
