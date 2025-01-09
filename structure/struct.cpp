@@ -96,11 +96,12 @@ void Search_by_id(Students stu[], int n, int target1)
     else
     {
         cout << " ============================================================" << endl;
-        cout << " \t\t Record Found\n";
+        cout << " \t\t Record  Not Found\n";
         cout << " ============================================================" << endl;
     }
     cout << "Press Enter to go to main manu.....";
     getch();
+    return;
 }
 void Search_by_rollnumber(Students, int, int);
 void Search_by_rollnumber(Students stu[], int n, int target2)
@@ -112,7 +113,7 @@ void Search_by_rollnumber(Students stu[], int n, int target2)
     for (int j = 0; j < n; j++)
     {
 
-        if (stu[j].id == target2)
+        if (stu[j].roll_number == target2)
         {
             found = true;
             loc = j;
@@ -130,12 +131,50 @@ void Search_by_rollnumber(Students stu[], int n, int target2)
     else
     {
         cout << " ============================================================" << endl;
-        cout << " \t\t Record Found\n";
+        cout << " \t\t Record Not Found\n";
         cout << " ============================================================" << endl;
     }
     cout << "Press Enter to go to main manu.....";
     getch();
+    return;
 }
+
+void Search_by_gpa(Students, int, float);
+void Search_by_gpa(Students stu[], int n, float target3)
+{
+    system("clear");
+
+    bool found = false;
+    int loc;
+    for (int k = 0; k < n; k++)
+    {
+
+        if (stu[k].gpa == target3)
+        {
+            found = true;
+            loc = k;
+        }
+    }
+    if (found == true)
+    {
+        cout << " ============================================================" << endl;
+        cout << " \t\t Record Found\n";
+        cout << " ============================================================" << endl;
+        cout << " ID \t ROLL NUMBER \t NAME \t \t FATHER NAME \t GPA \n";
+        cout << stu[loc].id << " \t " << stu[loc].roll_number << " \t\t " << stu[loc].name << "\t\t  " << stu[loc].Fname << "\t   " << stu[loc].gpa << endl;
+        cout << " ============================================================" << endl;
+    }
+    else
+    {
+        cout << " ============================================================" << endl;
+        cout << " \t\t Record Not Found\n";
+        cout << " ============================================================" << endl;
+    }
+    cout << "Press Enter to go to main manu.....";
+    getch();
+    return;
+}
+
 void Search(void);
 void Search(void)
 {
@@ -146,7 +185,10 @@ void Search(void)
     float gpas;
 
     cout << " Enter the tern You want to search\n";
-    cout << " I for ID \t R for ROLL NUMBER \t N for NAME \t \t F for FATHER NAME \t G for GPA \n";
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << " I for ID \t R for ROLL NUMBER \t N for NAME \t G for GPA \n";
     char input = getch();
     input = tolower(input);
     switch (input)
@@ -157,18 +199,20 @@ void Search(void)
         Search_by_id(stu, n, ids);
         break;
     case 'r':
-        cout << " Enter the ID You want to Search\n";
+        cout << " Enter the Roll Number You want to Search\n";
         cin >> roll_numbers;
-        cin >> ids;
         Search_by_rollnumber(stu, n, roll_numbers);
         break;
+    case 'g':
+        cout << " Enter the GPA You want to Search\n";
+        cin >> gpas;
+        Search_by_gpa(stu, n, gpas);
     }
 
     // cin.ignore();
     // cin.getline(names, 100);
     // cin.ignore();
     // cin.getline(Fnames, 100);
-    // cin >> gpa;
 }
 int main()
 {
@@ -201,9 +245,9 @@ int main()
             cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
             cout << "\t\t\t\t\t\t\t |             Press ( S ) to Search the record      |" << endl;
             cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
-            cout << "\t\t\t\t\t\t\t |           Press ( D ) to Display  the record      |" << endl;
+            cout << "\t\t\t\t\t\t\t |             Press ( D ) to Display  the record    |" << endl;
             cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
-            cout << "\t\t\t\t\t\t\t |              Press ( T )  to Delete  the record   |" << endl;
+            cout << "\t\t\t\t\t\t\t |             Press ( T )  to Delete  the record    |" << endl;
             cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
             cout << "\t\t\t\t\t\t\t |             Press ( M ) to Modify  the record     |" << endl;
             cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
