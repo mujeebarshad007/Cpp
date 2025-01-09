@@ -69,13 +69,10 @@ void Display(Students stu1[], int n1)
     getch();
 }
 
-void Search_by_id(Students, int);
-void Search_by_id(Students stu[], int n)
+void Search_by_id(Students, int, int);
+void Search_by_id(Students stu[], int n, int target1)
 {
     system("clear");
-    int target1;
-    cout << " Enter The Id You want to Search \n";
-    cin >> target1;
     bool found = false;
     int loc;
     for (int i = 0; i < n; i++)
@@ -105,22 +102,20 @@ void Search_by_id(Students stu[], int n)
     cout << "Press Enter to go to main manu.....";
     getch();
 }
-void Search_by_rollnumber(Students, int);
-void Search_by_rollnumber(Students stu[], int n)
+void Search_by_rollnumber(Students, int, int);
+void Search_by_rollnumber(Students stu[], int n, int target2)
 {
     system("clear");
-    int target2;
-    cout << " Enter The Roll Number You want to Search \n";
-    cin >> target2;
+
     bool found = false;
     int loc;
-    for (int i = 0; i < n; i++)
+    for (int j = 0; j < n; j++)
     {
 
-        if (stu[i].id == target2)
+        if (stu[j].id == target2)
         {
             found = true;
-            loc = i;
+            loc = j;
         }
     }
     if (found == true)
@@ -141,7 +136,40 @@ void Search_by_rollnumber(Students stu[], int n)
     cout << "Press Enter to go to main manu.....";
     getch();
 }
+void Search(void);
+void Search(void)
+{
+    int ids;
+    int roll_numbers;
+    char names[100];
+    char Fnames[100];
+    float gpas;
 
+    cout << " Enter the tern You want to search\n";
+    cout << " I for ID \t R for ROLL NUMBER \t N for NAME \t \t F for FATHER NAME \t G for GPA \n";
+    char input = getch();
+    input = tolower(input);
+    switch (input)
+    {
+    case 'i':
+        cout << " Enter the ID You want to Search\n";
+        cin >> ids;
+        Search_by_id(stu, n, ids);
+        break;
+    case 'r':
+        cout << " Enter the ID You want to Search\n";
+        cin >> roll_numbers;
+        cin >> ids;
+        Search_by_rollnumber(stu, n, roll_numbers);
+        break;
+    }
+
+    // cin.ignore();
+    // cin.getline(names, 100);
+    // cin.ignore();
+    // cin.getline(Fnames, 100);
+    // cin >> gpa;
+}
 int main()
 {
 
@@ -198,7 +226,7 @@ int main()
                 //     Sort();
                 //     break;
                 case 's':
-                    Search_by_rollnumber(stu, n);
+                    Search();
                     break;
                 case 'd':
                     Display(stu, n);
