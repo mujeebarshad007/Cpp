@@ -19,7 +19,7 @@ struct Students
     float gpa;
 };
 
-Students stu[3];
+Students stu[50];
 int n;
 void Search(void);
 void Search_by_id(Students, int, int);
@@ -30,6 +30,7 @@ void Display(Students, int);
 void Sort(Students stu[]);
 void Sortname(Students stu[]);
 void SortId(Students stu[]);
+void Modify(Students stu[]);
 
 void Add()
 {
@@ -62,7 +63,6 @@ void Add()
 }
 void Display(Students stu[])
 {
-    system("clear");
     cout << " ============================================================" << endl;
 
     cout << " ID \t ROLL NUMBER \t Name \t SEMESTER \t GPA \n";
@@ -72,8 +72,9 @@ void Display(Students stu[])
     }
     cout << " ============================================================" << endl;
 
-    cout << "Press enter to go to main manu.....";
-    getch();
+    cout << " Double Press enter to go to main manu.....";
+    cin.ignore();
+    cin.get();
 }
 
 void Search_by_id(Students stu[], int n, int target1)
@@ -105,8 +106,9 @@ void Search_by_id(Students stu[], int n, int target1)
         cout << " \t\t Record  Not Found\n";
         cout << " ============================================================" << endl;
     }
-    cout << "Press Enter to go to main manu.....";
-    getch();
+    cout << "  Press Enter to go to main manu.....";
+    cin.ignore();
+    cin.get();
     return;
 }
 void Search_by_rollnumber(Students stu[], int n, int target2)
@@ -139,8 +141,9 @@ void Search_by_rollnumber(Students stu[], int n, int target2)
         cout << " \t\t Record Not Found\n";
         cout << " ============================================================" << endl;
     }
-    cout << "Press Enter to go to main manu.....";
-    getch();
+    cout << "  Press Enter to go to main manu.....";
+    cin.ignore();
+    cin.get();
     return;
 }
 
@@ -174,8 +177,9 @@ void Search_by_gpa(Students stu[], int n, float target3)
         cout << " \t\t Record Not Found\n";
         cout << " ============================================================" << endl;
     }
-    cout << "Press Enter to go to main manu.....";
-    getch();
+    cout << "  Press Enter to go to main manu.....";
+    cin.ignore();
+    cin.get();
     return;
 }
 
@@ -210,12 +214,13 @@ void Search_by_name(Students stu[])
         cout << " \t\t Record Not Found\n";
         cout << " ============================================================" << endl;
     }
-    cout << "Press Enter to go to main manu.....";
-    getch();
+    cout << " Press Enter to go to main manu.....";
+    cin.ignore();
+    cin.get();
     return;
 }
 
-void Search(void)
+void Search(Students stu[])
 {
     int ids;
     int roll_numbers;
@@ -223,11 +228,22 @@ void Search(void)
     char Fnames[100];
     float gpas;
 
-    cout << " Enter the tern You want to search\n";
+    cout << " Enter the term You want to search\n";
     cout << endl;
     cout << endl;
     cout << endl;
-    cout << " I for ID \t R for ROLL NUMBER \t N for NAME \t G for GPA \n";
+    system("clear");
+    cout << "\t\t\t\t\t\t\t  ___________________________________________________" << endl;
+    cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
+    cout << "\t\t\t\t\t\t\t |              Search STUDENT RECORD                |" << endl;
+    cout << "\t\t\t\t\t\t\t |___________________________________________________|" << endl;
+    cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
+    cout << "\t\t\t\t\t\t\t |            Press ( I ) for  Search by ID          |" << endl;
+    cout << "\t\t\t\t\t\t\t |            Press ( R ) for  Search by ROLL NUMBER |" << endl;
+    cout << "\t\t\t\t\t\t\t |            Press ( N ) for Search by NAME         |" << endl;
+    cout << "\t\t\t\t\t\t\t |            Press ( G ) for Search by GPA          |" << endl;
+    cout << "\t\t\t\t\t\t\t |            Press ( Q ) to Return to Main Menu     |" << endl;
+    cout << "\t\t\t\t\t\t\t |___________________________________________________|" << endl;
     char input = getch();
     input = tolower(input);
     switch (input)
@@ -249,6 +265,11 @@ void Search(void)
     case 'n':
         Search_by_name(stu);
         break;
+    case 'q':
+        cout << " Returning to main menu \n";
+        return;
+    default:
+        cout << " Invalid option! Returning to the main menu...\n";
     }
 }
 
@@ -256,7 +277,7 @@ void Sort(Students stu[])
 {
     system("clear");
 
-    cout << " You Want TO Sort by Id or Name \n ";
+    cout << " You Want to Sort by Id or Name \n ";
     cout << endl;
     cout << endl;
     cout << "===========================================" << endl;
@@ -291,6 +312,7 @@ void SortId(Students stu[])
     cout << " The Sorted Data is Given as :\n";
     Display(stu);
 }
+
 void Sortname(Students stu[])
 {
 
@@ -308,6 +330,120 @@ void Sortname(Students stu[])
     }
     cout << " The Sorted Data is Given as :\n";
     Display(stu);
+}
+
+void Modify(Students stu[])
+{
+    if (n > 0)
+
+    {
+        int user_num;
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        cout << " Enter the user number you want to modify (1 to " << n << ")";
+        cin >> user_num;
+        if (user_num < 1 || user_num > n)
+        {
+            cout << " Invalid user number! Press Enter to return to the main menu...";
+            cin.ignore();
+            cin.get();
+            return;
+        }
+        user_num--;
+        cin.ignore();
+
+        cout << "\nEnter the term you want to Modify\n";
+        system("clear");
+        cout << "\t\t\t\t\t\t\t  ___________________________________________________" << endl;
+        cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
+        cout << "\t\t\t\t\t\t\t |              MODIFY STUDENT RECORD                |" << endl;
+        cout << "\t\t\t\t\t\t\t |___________________________________________________|" << endl;
+        cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
+        cout << "\t\t\t\t\t\t\t |            Press ( I ) for ID                     |" << endl;
+        cout << "\t\t\t\t\t\t\t |            Press ( R ) for ROLL NUMBER            |" << endl;
+        cout << "\t\t\t\t\t\t\t |            Press ( N ) for NAME                   |" << endl;
+        cout << "\t\t\t\t\t\t\t |            Press ( S ) for SEMESTER               |" << endl;
+        cout << "\t\t\t\t\t\t\t |            Press ( G ) for GPA                    |" << endl;
+        cout << "\t\t\t\t\t\t\t |            Press ( W ) for WHOLE STUDENT          |" << endl;
+        cout << "\t\t\t\t\t\t\t |            Press ( Q ) to Return to Main Menu     |" << endl;
+        cout << "\t\t\t\t\t\t\t |___________________________________________________|" << endl;
+        cout << "\t\t\t\t\t\t\t                Enter the Option: ";
+        char ch;
+        cin >> ch;
+        ch = tolower(ch);
+        switch (ch)
+        {
+        case 'i':
+            cout << " Enter the Modifiying ID \n";
+            cin >> stu[user_num].id;
+            cout << " Modified the Id Successfully \n";
+            cout << " To check go to main menu and select Display Function \n";
+
+            break;
+        case 'r':
+            cout << " Enter the Modifiying Roll Number \n";
+            cin >> stu[user_num].roll_number;
+            cout << " Modified the Roll Number Successfully \n";
+            cout << " To check go to main menu and select Display Function \n";
+
+            break;
+        case 'n':
+            cout << " Enter the Modifiying Name \n";
+            cin.getline(stu[user_num].name, 100);
+            cin.ignore();
+            cout << " Modified the Name Successfully \n";
+            cout << " To check go to main menu and select Display Function \n";
+
+            break;
+        case 's':
+            cout << " Enter the Modifiying Semester \n";
+            cin >> stu[user_num].semester;
+            cout << " Modified the Semester Successfully \n";
+            cout << " To check go to main menu and select Display Function \n";
+
+            break;
+        case 'g':
+            cout << " Enter the Modifiying GPA \n";
+            cin >> stu[user_num].gpa;
+            cout << " Modified the GPA Successfully \n";
+            cout << " To check go to main menu and select Display Function \n";
+
+            break;
+        case 'w':
+            cout << " Enter the New ID \n";
+            cin >> stu[user_num].id;
+
+            cout << " Enter the New Roll Number \n";
+            cin >> stu[user_num].roll_number;
+
+            cout << " Enter the New Name \n";
+            cin.ignore();
+            cin.getline(stu[user_num].name, 100);
+
+            cout << " Enter the New Semester \n";
+            cin >> stu[user_num].semester;
+
+            cout << " Enter the New Gpa \n";
+            cin >> stu[user_num].gpa;
+            cout << " All fields Modified Successfully \n";
+            break;
+        case 'q':
+            cout << " Returning to main menu \n";
+            return;
+        default:
+            cout << " Invalid option! Returning to the main menu...\n";
+        }
+        cout << " Press Enter to return to the main menu...";
+        cin.ignore();
+        cin.get();
+    }
+    else
+    {
+        cout << " There are no Records to Modify . Please go to main menu and Add Records \n";
+        cin.ignore();
+        cin.get();
+    }
 }
 int main()
 {
@@ -365,7 +501,7 @@ int main()
                     Sort(stu);
                     break;
                 case 's':
-                    Search();
+                    Search(stu);
                     break;
                 case 'd':
                     Display(stu);
@@ -373,18 +509,20 @@ int main()
                 // case 't':
                 //     Delete();
                 //     break;
-                // case 'm':
-                //     Modify();
-                //     break;
+                case 'm':
+                    Modify(stu);
+                    break;
                 case 'q':
                     exit(0);
                     break;
                 default:
                     cout << "\n Enter Only From Selected List \n";
+                    cin.ignore();
+                    getch();
                 }
             }
         }
-        getch();
+
         return 0;
     }
 }
