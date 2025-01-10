@@ -15,33 +15,41 @@ struct Students
     int id;
     int roll_number;
     char name[100];
-    char Fname[100];
+    int semester;
     float gpa;
 };
 
 Students stu[3];
 int n;
+void Search(void);
+void Search_by_id(Students, int, int);
+void Search_by_gpa(Students, int, float);
+void Search_by_rollnumber(Students, int, int);
+void Search_by_name(Students stu);
+void Display(Students, int);
+void Sort(Students stu[]);
+void Sortname(Students stu[]);
+void SortId(Students stu[]);
+
 void Add()
 {
     char ch;
-    char id1[6];
     do
     {
         system("clear");
         cout << " Enter the ID of the  Student " << n + 1 << endl;
         cin >> stu[n].id;
-        // stu[n].id = atoi(id1);
 
         cout << " Enter the ROLL NUMBER of the  Student " << n + 1 << endl;
         cin >> stu[n].roll_number;
 
-        cin.ignore();
+        cin.ignore(100, '\n');
         cout << " Enter the NAME of the  Student " << n + 1 << endl;
         cin.getline(stu[n].name, 100);
 
-        cout << " Enter the Father of the  Student " << n + 1 << endl;
+        cout << " Enter the Semester of the  Student " << n + 1 << endl;
 
-        cin.getline(stu[n].Fname, 100);
+        cin >> stu[n].semester;
 
         cout << " Enter the GPA of the  Student " << n + 1 << endl;
         cin >> stu[n].gpa;
@@ -52,16 +60,15 @@ void Add()
         tolower(ch);
     } while (ch == 'y');
 }
-void Display(Students, int);
-void Display(Students stu1[], int n1)
+void Display(Students stu[])
 {
     system("clear");
     cout << " ============================================================" << endl;
 
-    cout << " ID \t ROLL NUMBER \t Name \t FATHER NAME \t GPA \n";
-    for (int i = 0; i < n1; i++)
+    cout << " ID \t ROLL NUMBER \t Name \t SEMESTER \t GPA \n";
+    for (int i = 0; i < n; i++)
     {
-        cout << stu1[i].id << " \t " << stu1[i].roll_number << "\t \t " << stu1[i].name << "\t   " << stu1[i].Fname << "    \t " << stu1[i].gpa << endl;
+        cout << stu[i].id << " \t " << stu[i].roll_number << "\t \t " << stu[i].name << "\t   " << stu[i].semester << "    \t " << stu[i].gpa << endl;
     }
     cout << " ============================================================" << endl;
 
@@ -69,7 +76,6 @@ void Display(Students stu1[], int n1)
     getch();
 }
 
-void Search_by_id(Students, int, int);
 void Search_by_id(Students stu[], int n, int target1)
 {
     system("clear");
@@ -89,8 +95,8 @@ void Search_by_id(Students stu[], int n, int target1)
         cout << " ============================================================" << endl;
         cout << " \t\t Record Found\n";
         cout << " ============================================================" << endl;
-        cout << " ID \t ROLL NUMBER \t NAME \t \t FATHER NAME \t GPA \n";
-        cout << stu[loc].id << " \t " << stu[loc].roll_number << " \t\t " << stu[loc].name << "\t\t  " << stu[loc].Fname << "\t   " << stu[loc].gpa << endl;
+        cout << " ID \t ROLL NUMBER \t NAME \t \t SEMESTER   \t GPA \n";
+        cout << stu[loc].id << " \t " << stu[loc].roll_number << " \t\t " << stu[loc].name << "\t\t  " << stu[loc].semester << " \t\t   " << stu[loc].gpa << endl;
         cout << " ============================================================" << endl;
     }
     else
@@ -103,7 +109,6 @@ void Search_by_id(Students stu[], int n, int target1)
     getch();
     return;
 }
-void Search_by_rollnumber(Students, int, int);
 void Search_by_rollnumber(Students stu[], int n, int target2)
 {
     system("clear");
@@ -124,8 +129,8 @@ void Search_by_rollnumber(Students stu[], int n, int target2)
         cout << " ============================================================" << endl;
         cout << " \t\t Record Found\n";
         cout << " ============================================================" << endl;
-        cout << " ID \t ROLL NUMBER \t NAME \t \t FATHER NAME \t GPA \n";
-        cout << stu[loc].id << " \t " << stu[loc].roll_number << " \t\t " << stu[loc].name << "\t\t  " << stu[loc].Fname << "\t   " << stu[loc].gpa << endl;
+        cout << " ID \t ROLL NUMBER \t NAME \t \t SEMESTER   \t GPA \n";
+        cout << stu[loc].id << " \t " << stu[loc].roll_number << " \t\t " << stu[loc].name << "\t\t  " << stu[loc].semester << " \t\t   " << stu[loc].gpa << endl;
         cout << " ============================================================" << endl;
     }
     else
@@ -139,7 +144,6 @@ void Search_by_rollnumber(Students stu[], int n, int target2)
     return;
 }
 
-void Search_by_gpa(Students, int, float);
 void Search_by_gpa(Students stu[], int n, float target3)
 {
     system("clear");
@@ -160,8 +164,8 @@ void Search_by_gpa(Students stu[], int n, float target3)
         cout << " ============================================================" << endl;
         cout << " \t\t Record Found\n";
         cout << " ============================================================" << endl;
-        cout << " ID \t ROLL NUMBER \t NAME \t \t FATHER NAME \t GPA \n";
-        cout << stu[loc].id << " \t " << stu[loc].roll_number << " \t\t " << stu[loc].name << "\t\t  " << stu[loc].Fname << "\t   " << stu[loc].gpa << endl;
+        cout << " ID \t ROLL NUMBER \t NAME \t \t SEMESTER   \t GPA \n";
+        cout << stu[loc].id << " \t " << stu[loc].roll_number << " \t\t " << stu[loc].name << "\t\t  " << stu[loc].semester << " \t\t   " << stu[loc].gpa << endl;
         cout << " ============================================================" << endl;
     }
     else
@@ -175,7 +179,42 @@ void Search_by_gpa(Students stu[], int n, float target3)
     return;
 }
 
-void Search(void);
+void Search_by_name(Students stu[])
+{
+    bool found = false;
+    int loc;
+    char Sname[100];
+    cout << " Enter The name you want to Search \n";
+    cin.getline(Sname, 100);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (strcmp(stu[i].name, Sname) == 0)
+        {
+            found = true;
+            loc = i;
+        }
+    }
+    if (found == true)
+    {
+        cout << " ============================================================" << endl;
+        cout << " \t\t Record Found\n";
+        cout << " ============================================================" << endl;
+        cout << " ID \t ROLL NUMBER \t NAME \t \t SEMESTER   \t GPA \n";
+        cout << stu[loc].id << " \t " << stu[loc].roll_number << " \t\t " << stu[loc].name << "\t\t  " << stu[loc].semester << " \t\t   " << stu[loc].gpa << endl;
+        cout << " ============================================================" << endl;
+    }
+    else
+    {
+        cout << " ============================================================" << endl;
+        cout << " \t\t Record Not Found\n";
+        cout << " ============================================================" << endl;
+    }
+    cout << "Press Enter to go to main manu.....";
+    getch();
+    return;
+}
+
 void Search(void)
 {
     int ids;
@@ -207,12 +246,68 @@ void Search(void)
         cout << " Enter the GPA You want to Search\n";
         cin >> gpas;
         Search_by_gpa(stu, n, gpas);
+    case 'n':
+        Search_by_name(stu);
+        break;
     }
+}
 
-    // cin.ignore();
-    // cin.getline(names, 100);
-    // cin.ignore();
-    // cin.getline(Fnames, 100);
+void Sort(Students stu[])
+{
+    system("clear");
+
+    cout << " You Want TO Sort by Id or Name \n ";
+    cout << endl;
+    cout << endl;
+    cout << "===========================================" << endl;
+    cout << " Press I for Id and N for name \n";
+    char sinp = getch();
+    sinp = tolower(sinp);
+    switch (sinp)
+    {
+    case 'i':
+        SortId(stu);
+        break;
+    case 'n':
+        Sortname(stu);
+        break;
+    }
+}
+
+void SortId(Students stu[])
+{
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (stu[j].id > stu[j + 1].id)
+            {
+                Students temp = stu[j];
+                stu[j] = stu[j + 1];
+                stu[j + 1] = temp;
+            }
+        }
+    }
+    cout << " The Sorted Data is Given as :\n";
+    Display(stu);
+}
+void Sortname(Students stu[])
+{
+
+    for (int i = 0; i < n - 1; i++)
+    {
+        for (int j = 0; j < n - i - 1; j++)
+        {
+            if (strcmp(stu[j].name, stu[j + 1].name) > 0)
+            {
+                Students temp = stu[j];
+                stu[j] = stu[j + 1];
+                stu[j + 1] = temp;
+            }
+        }
+    }
+    cout << " The Sorted Data is Given as :\n";
+    Display(stu);
 }
 int main()
 {
@@ -266,14 +361,14 @@ int main()
                 case 'a':
                     Add();
                     break;
-                // case 'o':
-                //     Sort();
-                //     break;
+                case 'o':
+                    Sort(stu);
+                    break;
                 case 's':
                     Search();
                     break;
                 case 'd':
-                    Display(stu, n);
+                    Display(stu);
                     break;
                 // case 't':
                 //     Delete();
