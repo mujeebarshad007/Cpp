@@ -1,4 +1,4 @@
-// Sorting in structure by age
+// Modifying in structure by age and name
 #include <iostream>
 #include <cstring>
 #include <cmath>
@@ -12,9 +12,18 @@ struct students
     char name[100];
     int semester;
 };
-
-void modify(students stu[]);
-void modify(students stu[])
+void Display(students stu[]);
+void Display(students stu[])
+{
+    cout << " Displayed the record as :" << endl;
+    cout << " Age \t Name \t\t\t Semester \n";
+    for (int i = 0; i < 3; i++)
+    {
+        cout << stu[i].age << " \t " << stu[i].name << " \t\t\t " << stu[i].semester << endl;
+    }
+}
+void modify_by_age(students stu[]);
+void modify_by_age(students stu[])
 {
     int mod_age;
     cout << " Enter the age to modify data \n";
@@ -29,22 +38,49 @@ void modify(students stu[])
             cin.ignore();
             cout << " Enter the Name of the student of age" << mod_age << endl;
             cin.getline(stu[i].name, 100);
+
             cout << " Enter the Semester of the student of age " << mod_age << endl;
             cin >> stu[i].semester;
         }
     }
 }
-
-void Display(students stu[]);
-void Display(students stu[])
+void modify_by_name(students stu[]);
+void modify_by_name(students stu[])
 {
-    cout << " Displayed the record as :" << endl;
-    cout << " Age \t Name \t\t\t Semester \n";
+    char sname[100];
+    cout << " Enter the Name to modify data \n";
+    cin.getline(sname, 100);
+    bool found = false;
+
     for (int i = 0; i < 3; i++)
     {
-        cout << stu[i].age << " \t " << stu[i].name << " \t\t\t " << stu[i].semester << endl;
+        if (strcmp(stu[i].name, sname) == 0)
+        {
+
+            cout << " Enter the age of the student of age " << sname << endl;
+            cin >> stu[i].age;
+            cin.ignore();
+            cout << " Enter the Name of the student of age " << sname << endl;
+            cin.getline(stu[i].name, 100);
+            cout << " Enter the Semester of the student of age " << sname << endl;
+            cin >> stu[i].semester;
+            Display(stu);
+        }
+        else
+        {
+            found = true;
+        }
+    }
+    if (found == true)
+
+    {
+        cout << endl;
+        cout << endl;
+        cout << endl;
+        cout << "Wrong credentials please try again" << endl;
     }
 }
+
 int main()
 {
     int size = 3;
@@ -64,13 +100,14 @@ int main()
 
     cout << endl;
     cout << endl;
-
-    modify(stu);
     cin.ignore();
-    cout << endl;
-    cout << endl;
+    modify_by_name(stu);
+    // uncomment this to use age modify function
+    // modify_by_age(stu);
 
-    Display(stu);
+    cout
+        << endl;
+    cout << endl;
 
     return 0;
 }

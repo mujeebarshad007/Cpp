@@ -1,4 +1,4 @@
-// Searching in the structure
+// Sorting in structure by age
 #include <iostream>
 #include <cstring>
 #include <cmath>
