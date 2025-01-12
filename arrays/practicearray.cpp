@@ -1,49 +1,40 @@
-// Deleting elemnt in an array
+// Finding Number of duplicate items
 #include <iostream>
 #include <cstring>
 #include <cmath>
 #include <iomanip>
 #include <ctime>
 #include <climits>
+
 using namespace std;
-void del(int, int &, int);
-void del(int list[], int &n, int n2)
+void dupicateCount(int list[], int n)
 {
-    for (int i = n2; i < n - 1; i++)
+    int count;
+    count = 0;
+    for (int i = 0; i < n; i++)
     {
-        list[i] = list[i + 1];
+
+        for (int j = i + 1; j < n; j++)
+        {
+            if (list[i] == list[j])
+
+            {
+                count++;
+            }
+        }
     }
-    n--;
+    cout << " The number of the duplicate items are " << count << endl;
 }
 int main()
 {
-    int size = 5;
-    int arr[size];
+    int size = 10;
+    int arr[size] = {20, 30, 1, 12, 30, 12, 16, 1, 20, 9};
+    cout << " The original array is give as : " << endl;
     for (int i = 0; i < size; i++)
     {
-        cout << " Enter the value for the array  at index " << i + 1 << endl;
-        cin >> arr[i];
+        cout << arr[i] << " ";
     }
-    int target;
     cout << endl;
-    cout << endl;
-    cout << endl;
-    cout << " Enter the position index you want to delete \n";
-    cin >> target;
-    if (target >= 0 && target <= 4)
-    {
-
-        del(arr, size, target);
-        cout << " The Position " << target << " deleted successffully " << endl;
-        for (int i = 0; i < size; i++)
-        {
-
-            cout << arr[i] << " ";
-        }
-        cout << endl;
-    }
-    else
-        cout << " Enter the poistion between [1-5]" << endl;
-
+    dupicateCount(arr, size);
     return 0;
 }
