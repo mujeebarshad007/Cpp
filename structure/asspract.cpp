@@ -17,9 +17,10 @@ struct student
     float gpa;
 };
 student stu[10];
-int n;
+int n = 0;
 void Add(student stu[]);
-void Display(students stu);
+void Display(student stu[]);
+void Sort(student stu[]);
 
 void Add(student stu[])
 {
@@ -36,13 +37,44 @@ void Add(student stu[])
         cout << " Enter the GPA of the student " << n + 1 << endl;
         cin >> stu[n].gpa;
         n++;
-        cout << " DO you want more studemts to add [y/n]\n";
+        cout << " Do you want more students to add [y/n]\n";
         cin >> ch;
 
         ch = tolower(ch);
     } while (ch == 'y');
 }
-void Display(students stu);
+void Display(student stu[])
+{
+
+    cout << setw(10) << " ID:" << setw(20) << "Name:" << setw(20) << "GPA:" << endl;
+    cout << setw(10) << "-------" << setw(20) << "----" << setw(20) << "----" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        cout << setw(10) << stu[i].id << setw(20) << stu[i].name << setw(30) << stu[i].gpa << endl;
+    }
+
+    cout << " ============================================================" << endl;
+
+    cout << " Press Enter to go to main menu \n";
+    getch();
+}
+
+void Sort(student stu[])
+{
+    system("clear");
+    cout << " Press I for sort by ID and N for Sort by Name " << endl;
+    char in = getch();
+    in = tolower(in);
+    switch (in)
+    {
+    case 'i':
+        Sort_by_id;
+        break;
+    case 'n':
+        Sort_by_id;
+        break;
+    }
+}
 
 int main()
 {
@@ -74,9 +106,9 @@ int main()
         case 'a':
             Add(stu);
             break;
-        // case 'd':
-        //     Display(stu);
-        //     break;
+        case 'd':
+            Display(stu);
+            break;
         // case 'o':
         //     Sort(stu);
         //     break;
