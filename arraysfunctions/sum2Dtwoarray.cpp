@@ -23,7 +23,7 @@ int main()
     {
         for (int j = 0; j < 3; j++)
         {
-            cout << arr1[i][j] << " ";
+            cout << arr1[i][j] << " "; /*Displaying arrays side by side*/
         }
         cout << "\t\t";
         for (int j = 0; j < 3; j++)

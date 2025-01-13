@@ -46,6 +46,10 @@ void deleteRecord(students stu[], int &n)
             break;
         }
     }
+    if (!found)
+    {
+        cout << " No Record With this Data Name \n";
+    }
 }
 int main()
 {
