@@ -26,7 +26,10 @@ void Sort_by_name(student stu[]);
 void Search(student stu[]);
 void Search_by_id(student stu[]);
 void Search_by_name(student stu[]);
+void Modify(student stu[]);
+void Delete(student stu[]);
 void Add(student stu[])
+
 {
     char ch;
     do
@@ -49,6 +52,27 @@ void Add(student stu[])
 }
 void Display(student stu[])
 {
+    if (n > 0)
+    {
+
+        cout << setw(10) << " ID:" << setw(20) << "Name:" << setw(20) << "GPA:" << endl;
+        cout << setw(10) << "-------" << setw(20) << "----" << setw(20) << "----" << endl;
+        for (int i = 0; i < n; i++)
+        {
+            cout << setw(10) << stu[i].id << setw(20) << stu[i].name << setw(20) << stu[i].gpa << endl;
+        }
+
+        cout << " ============================================================" << endl;
+
+        cout << " Press Enter to go to main menu \n";
+    }
+    else
+    {
+        cout << " No Records to Display Please Go to Main Menu and add records " << endl;
+    }
+}
+void Displayf(student stu[])
+{
 
     cout << setw(10) << " ID:" << setw(20) << "Name:" << setw(20) << "GPA:" << endl;
     cout << setw(10) << "-------" << setw(20) << "----" << setw(20) << "----" << endl;
@@ -56,26 +80,30 @@ void Display(student stu[])
     {
         cout << setw(10) << stu[i].id << setw(20) << stu[i].name << setw(20) << stu[i].gpa << endl;
     }
-
-    cout << " ============================================================" << endl;
-
-    cout << " Press Enter to go to main menu \n";
 }
 
 void Sort(student stu[])
 {
-    system("clear");
-    cout << " Press I for sort by ID and N for Sort by Name " << endl;
-    char sinp = getch();
-    sinp = tolower(sinp);
-    switch (sinp)
+    if (n > 0)
     {
-    case 'i':
-        Sort_by_id(stu);
-        break;
-    case 'n':
-        Sort_by_name(stu);
-        break;
+
+        system("clear");
+        cout << " Press I for sort by ID and N for Sort by Name " << endl;
+        char sinp = getch();
+        sinp = tolower(sinp);
+        switch (sinp)
+        {
+        case 'i':
+            Sort_by_id(stu);
+            break;
+        case 'n':
+            Sort_by_name(stu);
+            break;
+        }
+    }
+    else
+    {
+        cout << " Please Go to Main Menu and add records " << endl;
     }
 }
 
@@ -100,7 +128,6 @@ void Sort_by_id(student stu[])
     cout << " ============================================================" << endl;
     Display(stu);
     cout << endl;
-    cout << " Press Enter to go to main menu \n";
 }
 
 void Sort_by_name(student stu[])
@@ -136,24 +163,37 @@ void Sort_by_name(student stu[])
     cout << " ============================================================" << endl;
     Display(stu);
     cout << endl;
-    cout << " Press Enter to go to main menu \n";
 }
 void Search(student stu[])
 {
-    system("clear");
-    cout << " Press I for Search by ID and N for Search by Name " << endl;
-    char seinp = getch();
-    seinp = tolower(seinp);
-    switch (seinp)
+    if (n > 0)
     {
-    case 'i':
-        Search_by_id(stu);
-        break;
-    case 'n':
-        Search_by_name(stu);
-        break;
-    default:
-        cout << " Enter the correcct key for Searching " << endl;
+
+        system("clear");
+        cout << "\t\t\t\t\t\t\t  ___________________________________________________" << endl;
+        cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
+        cout << "\t\t\t\t\t\t\t |             Press I to Search by ID               |" << endl;
+        cout << "\t\t\t\t\t\t\t |             Press N to Search by Name             |" << endl;
+        cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
+        cout << "\t\t\t\t\t\t\t |___________________________________________________|" << endl;
+
+        char seinp = getch();
+        seinp = tolower(seinp);
+        switch (seinp)
+        {
+        case 'i':
+            Search_by_id(stu);
+            break;
+        case 'n':
+            Search_by_name(stu);
+            break;
+        default:
+            cout << " Enter the correcct key for Searching " << endl;
+        }
+    }
+    else
+    {
+        cout << " Please Go to Main Menu and add records " << endl;
     }
 }
 void Search_by_id(student stu[])
@@ -175,6 +215,7 @@ void Search_by_id(student stu[])
     if (found == true)
     {
         cout << "=====================================================================" << endl;
+        cout << endl;
         cout << " Yes The Record with the id " << id_num << "  has been Found" << endl;
         cout << setw(10) << " ID:" << setw(20) << "Name:" << setw(20) << "GPA:" << endl;
         cout << setw(10) << "-------" << setw(20) << "----" << setw(20) << "----" << endl;
@@ -221,6 +262,7 @@ void Search_by_name(student stu[])
     {
         cout << "=====================================================================" << endl;
         cout << " Yes The Record with the id " << sname << "  has been Found" << endl;
+        cout << endl;
         cout << setw(10) << " ID:" << setw(20) << "Name:" << setw(20) << "GPA:" << endl;
         cout << setw(10) << "-------" << setw(20) << "----" << setw(20) << "----" << endl;
         cout << setw(10) << stu[loc].id << setw(20) << stu[loc].name << setw(20) << stu[loc].gpa << endl;
@@ -232,6 +274,121 @@ void Search_by_name(student stu[])
     {
         cout << "=====================================================================" << endl;
         cout << " Sorry The Record with the id " << sname << "  has not been Found" << endl;
+    }
+}
+void Modify(student stu[])
+{
+    if (n > 0)
+    {
+        bool found = false;
+        int m_id;
+        cout << " Enter the user ID to Modify his Record \n";
+        cin >> m_id;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (m_id == stu[i].id)
+            {
+                found = true;
+                system("clear");
+                cout << " Press I to Modify ID and Press Enter" << endl;
+                cout << " Press N to Modify Name and Press Enter " << endl;
+                cout << " Press G to Modify Gpa and Press Enter" << endl;
+                cout << " Press W to Modify WHole Student Record and Press Enter" << endl;
+                char ch;
+                cin >> ch;
+                ch = tolower(ch);
+                switch (ch)
+                {
+                case 'i':
+                    cout << endl;
+                    cout << " Enter the New Modifiying Id " << endl;
+                    cin >> stu[i].id;
+                    break;
+                case 'n':
+                    cout << endl;
+                    cout << " Enter the New Modifiying Name " << endl;
+                    cin.ignore();
+                    cin.getline(stu[i].name, 100);
+                    break;
+                case 'g':
+                    cout << endl;
+                    cout << " Enter the New Modifiying Gpa " << endl;
+                    cin >> stu[i].gpa;
+                    break;
+                case 'w':
+                    cout << endl;
+                    cout << endl;
+                    cout << " Enter the New Modifiying Id " << endl;
+                    cin >> stu[i].id;
+                    cout << " Enter the New Modifiying Name " << endl;
+                    cin.ignore();
+                    cin.getline(stu[i].name, 100);
+                    cout << " Enter the New Modifiying Gpa " << endl;
+                    cin >> stu[i].gpa;
+                    break;
+                default:
+                    cout << "Invalid Option . No Record is changed \n";
+                }
+                cout << " Record has been Modified Successfully. \n";
+            }
+        }
+        if (found)
+        {
+            cout << " No Record for this ID has been Found " << endl;
+        }
+    }
+    else
+    {
+        cout << " Please Go to Main Menu and add records " << endl;
+    }
+}
+void Delete(student stu[])
+{
+
+    if (n > 0)
+    {
+        system("clear");
+        Displayf(stu);
+
+        int del_id;
+        cout << "\t\t\t\t\t\t\t  ___________________________________________________" << endl;
+        cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
+        cout << "\t\t\t\t\t\t\t |   Enter the user Number ID to Delete its record   |" << endl;
+        cout << "\t\t\t\t\t\t\t |         Id   Number from 1 to " << n << "                   |" << endl;
+        cout << "\t\t\t\t\t\t\t |                                                   |" << endl;
+        cout << "\t\t\t\t\t\t\t |___________________________________________________|" << endl;
+        cout << "\t\t\t\t\t\t\t                Enter the ID Number: ";
+
+        cin >> del_id;
+
+        bool found = false;
+        for (int i = 0; i < n; i++)
+        {
+            if (stu[i].id == del_id)
+            {
+
+                for (int j = i; j < n - 1; j++)
+                {
+                    stu[j] = stu[j + 1];
+                }
+                n--;
+                found = true;
+                cout << "\t\t\t\t\t\t                The Record  has been Deleted Successfully. \n";
+                cout << "\t\t\t\t\t\t          Press Enter to go to main menu and use Display to Check\n ";
+                break;
+            }
+        }
+        if (!found)
+        {
+            cout << "No record found with ID " << del_id << "!\n";
+        }
+
+        cout << endl;
+    }
+    else
+    {
+        cout << " Please Go to Main Menu and add records " << endl;
     }
 }
 
@@ -274,15 +431,18 @@ int main()
         case 's':
             Search(stu);
             break;
-        // case 'm':
-        //     Modify(stu);
-        //     break;
-        // case 't':
-        //     Delete(stu);
-        //     break;
+        case 'm':
+            Modify(stu);
+            break;
+        case 't':
+            Delete(stu);
+            break;
         case 'q':
             exit(0);
             break;
+        default:
+            cout << "Select Only from the menu" << endl;
+            cout << "Press Enter \n";
         }
         getch();
     }
