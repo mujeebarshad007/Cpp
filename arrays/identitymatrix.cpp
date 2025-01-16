@@ -32,17 +32,25 @@ void Display(int list[][3])
 void checkIdentity(int list[][3])
 {
     bool found = false;
+    bool new1 = false;
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 3 - 1; j++)
         {
-            if (list[i] == list[j] == 1)
+            if (i == j)
             {
                 found = true;
             }
+            if (found == true)
+            {
+                if (list[i][j] == 1)
+                {
+                    new1 = true;
+                }
+            }
         }
     }
-    if (!found)
+    if (!new1)
     {
 
         cout << " It is  a identity matrix " << endl;
