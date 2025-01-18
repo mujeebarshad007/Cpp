@@ -1,4 +1,4 @@
-// Function of findind prime, armstrong and perfect numbers;
+// Function of finding prime, armstrong and perfect numbers;
 #include <iostream>
 using namespace std;
 void prime1(int);

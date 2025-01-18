@@ -7,11 +7,11 @@ int cubeN(int n)
     for (int i = 0; i < 3; i++)
     {
         cube *= n;
-    }
+   }
     return cube;
 }
 
-int main()
+int main)
 {
     int n;
     cout << " Enter Any Numebr for cube \n";
