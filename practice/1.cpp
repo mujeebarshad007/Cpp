@@ -7,33 +7,29 @@
 using namespace std;
 int main()
 {
-    int tar = 10;
-    const int size = 6;
-
-    int arr[size] = {5,
-                     2,
-                     7, 9, 20, 5};
-
-    int c = 0;
+    const int size = 10;
+    int arr[size];
     for (int i = 0; i < size; i++)
     {
-        for (int j = i + 1; j < size; j++)
-        {
-            if (arr[i] + arr[j] == tar)
-            {
+        cout << " Enter the value at the index " << i + 1 << " -> ";
+        cin >> arr[i];
+    }
 
-                c = 1;
-                break;
-            }
-        }
-    }
-    if (c == 1)
+    int st = 0;
+    int end = size - 1;
+    while (st < end)
     {
-        cout << " found" << endl;
+        int temp;
+        temp = arr[st];
+        arr[st] = arr[end];
+        arr[end] = temp;
+        st++;
+        end--;
     }
-    else
+    cout << " the reverse eof the elements of the array are given as " << endl;
+    for (int i = 0; i < size; i++)
     {
-        cout << " not found " << endl;
+        cout << arr[i] << " ";
     }
     return 0;
 }
