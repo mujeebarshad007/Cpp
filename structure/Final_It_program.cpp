@@ -22,7 +22,7 @@ void Input(student stu[])
     do
     {
 
-        cout << " ENter the Registration ID " << endl;
+        cout << " Enter the Registration ID " << endl;
         cin >> stu[n].regid;
         cin.ignore();
 
@@ -31,10 +31,10 @@ void Input(student stu[])
         cout << " ENter the semnum" << endl;
         cin >> stu[n].semnum;
         cin.ignore();
-        cout << " ENter the Gender Type male or female " << endl;
+        cout << " Enter the Gender Type male or female " << endl;
         cin.getline(stu[n].gender, 10);
 
-        cout << " ENter the Average marks [ if marks > 80 for A grade]" << endl;
+        cout << " Enter the Average marks [ if marks > 80 for A grade]" << endl;
         cin >> stu[n].avgmarks;
 
         n++;
