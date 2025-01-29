@@ -67,5 +67,6 @@ int main()
     {
         cout << sum[i] << " ";
     }
+cout<< "Brother keep Grinding"<<endl;
     return 0;
 }
