@@ -22,5 +22,6 @@ int main()
     {
         cout << " Your Entered Number is not  a Palindrome\n ";
     }
+
     return 0;
 }
