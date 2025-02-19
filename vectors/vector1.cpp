@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+// ALL BASIC VECTOR CONCEPT LEARNT
+
 // Vector Functions that are used
 // size
 // push_back
@@ -39,5 +41,18 @@ int main()
         cout << val << " ";
     }
     cout << endl;
+
+    cout << " The First Value is " << vec.front() << endl;
+    cout << " The Last Value is " << vec.back() << endl;
+    cout << " The Value at index 1 is  " << vec.at(1) << endl;
+
+    // In vectors like by using push_back the new memory is made by making
+    //  double of last one that's wht=y its size will be 8 but capacity will be 10
+
+    // capacity is always double to size
+
+    cout << vec.size() << endl;
+    cout << vec.capacity() << endl;
+
     return 0;
 }
