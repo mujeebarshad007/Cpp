@@ -47,7 +47,8 @@
     "typeinfo": "cpp",
     "iomanip": "cpp",
     "cstring": "cpp",
-    "ctime": "cpp"
+    "ctime": "cpp",
+    "climits": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "gcc",
   "C_Cpp_Runner.cppCompilerPath": "g++",
