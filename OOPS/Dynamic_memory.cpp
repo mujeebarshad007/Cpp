@@ -45,5 +45,13 @@ int main()
         }
         cout << endl;
     }
+
+    //  Deleting the inner arrays
+    for (int i = 0; i < rows; i++)
+    {
+        delete[] list[i];
+    }
+    delete[] list;
+
     return 0;
 }
