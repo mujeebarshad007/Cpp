@@ -10,7 +10,7 @@ void binDec(int Dec1, int Bin1, int &num1, int &num2)
     int pow1 = 1;
     int rem1;
 
-    while (Dec1 != 0) /*COnverting to Binary*/
+    while (Dec1 != 0) /*Converting to Binary*/
     {
         rem1 = Dec1 % 2;
         Dec1 /= 2;
