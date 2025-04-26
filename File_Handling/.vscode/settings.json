@@ -138,5 +138,11 @@
     "typeinfo": "cpp",
     "valarray": "cpp",
     "variant": "cpp"
+  },
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
   }
 }

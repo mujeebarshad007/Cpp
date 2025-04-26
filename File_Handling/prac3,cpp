@@ -1,0 +1,22 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    ofstream input;
+    input.open("/home/muhib009/Desktop/new");
+    if (!input)
+    {
+        cout << "Error" << endl;
+    }
+    else
+    {
+        cout << " Enter The Data in the file" << endl;
+        while (!EOF)
+            cout << " Data written successcully\n";
+        input.close();
+    }
+    return 0;
+}
