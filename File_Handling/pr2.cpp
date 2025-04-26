@@ -1,29 +1,24 @@
 #include <iostream>
 #include <fstream>
-#include <string>
 #include <iomanip>
+#include <cstring>
 using namespace std;
-
 int main()
 {
+    string line;
     ifstream st;
-    st.open("/home/muhib009/Desktop/Mujeeb");
+    st.open("/home/muhib009/Desktop/Practice");
     if (!st)
     {
-        cout << "Error in Opening the file " << endl;
+        cout << "Error Opening File\n";
     }
     else
     {
         while (!st.eof())
         {
-            string line;
-
             getline(st, line);
-            {
-                cout << line << endl;
-            }
+            cout << line << endl;
         }
-        st.close();
     }
     return 0;
 }

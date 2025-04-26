@@ -15,14 +15,13 @@ int main()
     }
     else
     {
-
         cout << "Enter name: ";
         cin >> name;
         cout << "Enter age: ";
         cin >> age;
         cout << "Enter description: ";
         cin >> disc;
-
+        st << name << "\t" << age << "\t" << disc << endl;
         cout << name << "\t" << age << "\t" << disc << endl;
 
         st.close();
